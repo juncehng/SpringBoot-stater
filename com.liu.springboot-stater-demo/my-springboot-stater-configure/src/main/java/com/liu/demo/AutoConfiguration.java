@@ -1,6 +1,5 @@
 package com.liu.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -17,11 +16,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(AutoConfigureProperties.class)
 public class AutoConfiguration {
 
-    @Autowired
-    private AutoConfigureProperties autoConfigureProperties;
-
     @Bean
     public AutoConfigurationService autoConfigurationService(){
-        return new AutoConfigurationService(autoConfigureProperties);
+        return new AutoConfigurationService();
     }
 }
